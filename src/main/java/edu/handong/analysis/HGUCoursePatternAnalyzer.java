@@ -7,8 +7,8 @@ import java.util.TreeMap;
 
 import edu.handong.analysis.datamodel.Course;
 import edu.handong.analysis.datamodel.Student;
-import edu.handong.analysise.utils.NotEnoughArgumentException;
-import edu.handong.analysise.utils.Utils;
+import edu.handong.analysis.utils.NotEnoughArgumentException;
+import edu.handong.analysis.utils.Utils;
 
 public class HGUCoursePatternAnalyzer {
 
@@ -47,7 +47,8 @@ public class HGUCoursePatternAnalyzer {
 	}
 	
 	/**
-	 * This method create HashMap<String,Student> from the data csv file. Key is a student id and the corresponding object is an instance of Student.
+	 * This method create HashMap<String,Student> from the data csv file.
+	 * Key is a student id and the corresponding object is an instance of Student.
 	 * The Student instance have all the Course instances taken by the student.
 	 * @param lines
 	 * @return
