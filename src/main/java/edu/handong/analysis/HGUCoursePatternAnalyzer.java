@@ -54,8 +54,10 @@ public class HGUCoursePatternAnalyzer {
 	 * @return
 	 */
 	private HashMap<String,Student> loadStudentCourseRecords(ArrayList<String> lines) {
-		
-		// TODO: Implement this method
+		HashMap<String,Student> information = new HashMap<String,Student>();
+		for () {
+			
+		}
 		
 		return null; // do not forget to return a proper variable.
 	}
