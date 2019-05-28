@@ -41,11 +41,13 @@ public class Utils {
 		BufferedWriter bufWriter = null;
         try{
             bufWriter = new BufferedWriter(new FileWriter(targetFileName));
+        
             
-            for (String line : lines) 
+            for (String line : lines) { 
                 bufWriter.append(line);
             	bufWriter.append(System.lineSeparator());
-            bufWriter.flush();
+            	bufWriter.flush();
+            }
         }catch(FileNotFoundException e){
             System.out.println("The file path does not exist. Please check your CLI argument!");
             System.exit(0);

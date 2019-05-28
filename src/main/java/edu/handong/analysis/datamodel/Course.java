@@ -12,16 +12,16 @@ public class Course {
 	private int semesterCourseTaken;
 
 	public Course(String line) {
-	    String[] word = line.split(" ");
-		this.setStudentId(word[0]);
-		this.setYearMonthGraduated(word[1]);
-		this.setFirstMajor(word[2]);
-		this.setSecondMajor(word[3]);
-		this.setCourseCode(word[4]);
-		this.setCourseName(word[5]);
-		this.setCourseCredit(word[6]);
-		this.setYearTaken(Integer.parseInt(word[7]));
-		this.setSemesterCourseTaken(Integer.parseInt(word[8]));
+	    String[] word = line.split(",");
+		this.setStudentId(word[0].trim());
+		this.setYearMonthGraduated(word[1].trim());
+		this.setFirstMajor(word[2].trim());
+		this.setSecondMajor(word[3].trim());
+		this.setCourseCode(word[4].trim());
+		this.setCourseName(word[5].trim());
+		this.setCourseCredit(word[6].trim());
+		this.setYearTaken(Integer.parseInt(word[7].trim()));
+		this.setSemesterCourseTaken(Integer.parseInt(word[8].trim()));
     }
 
 	public String getStudentId() {

@@ -55,11 +55,19 @@ public class HGUCoursePatternAnalyzer {
 	 */
 	private HashMap<String,Student> loadStudentCourseRecords(ArrayList<String> lines) {
 		HashMap<String,Student> information = new HashMap<String,Student>();
-		for () {
+		for (String data : lines) {
+			Course course = new Course(data);
+			String studentId = course.getStudentId();
+			Student student = new Student(studentId);
 			
+			if(information.containsKey(studentId)) {
+				information.get(studentId).addCourse(course);
+			} else {
+				student.addCourse(course);
+				information.put(studentId, student);
+			}
 		}
-		
-		return null; // do not forget to return a proper variable.
+		return information; // do not forget to return a proper variable.
 	}
 
 	/**
@@ -69,16 +77,22 @@ public class HGUCoursePatternAnalyzer {
      * 0001,14,2,8
 	 * ....
 	 * 
-	 * 0001,14,1,9 => this means, 0001 student registered 14 semeters in total. In the first semeter (1), the student took 9 courses.
+	 * 0001,14,1,9 => this means, 0001 student registered 14 semesters in total. In the first semeter (1), the student took 9 courses.
 	 * 
 	 * 
 	 * @param sortedStudents
 	 * @return
 	 */
 	private ArrayList<String> countNumberOfCoursesTakenInEachSemester(Map<String, Student> sortedStudents) {
-		
-		// TODO: Implement this method
-		
-		return null; // do not forget to return a proper variable.
+		ArrayList<String> savedInformation = new ArrayList<String>();
+		savedInformation.add("StudentID, TotalNumberOfSemestersRegistered, Semester, NumCoursesTakenInTheSemester");
+		for (String data : sortedStudents.keySet()) {
+			Student alldata = new Student(data);
+			for (int count=1; count <alldata.getSemesterByYearAndSemester().size(); count ++) {
+				String line = data + alldata.getSemesterByYearAndSemester().size() + count + alldata.getNumCourseInNthSemester(count);
+				savedInformation.add(line);
+			}
+		}	
+		return savedInformation; // do not forget to return a proper variable.
 	}
 }
